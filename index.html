@@ -167,15 +167,23 @@ document.addEventListener("DOMContentLoaded",function(){
      li' e non riscritto. La copia del CSS di tool_fmt non ce l'aveva
      perche' quel tool non ha tabelle larghe. */
   @media screen and (max-width:640px){
-    table:is(.rec,.adv,.glance,.evi,.rx){ display:block; overflow:visible; border:none; border-radius:0; background:none; }
-    table:is(.rec,.adv,.glance,.evi,.rx) thead{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0 0 0 0); clip-path:inset(50%); white-space:nowrap; border:0; }
-    table:is(.rec,.adv,.glance,.evi,.rx) :is(tbody,tr,td){ display:block; width:auto; }
-    table:is(.rec,.adv,.glance,.evi,.rx) tr{ background:var(--surface); border:.5px solid var(--border-strong); border-radius:var(--radius-md); padding:9px 12px; margin:0 0 8px; }
-    table:is(.rec,.adv,.glance,.evi,.rx) tr:last-child{ margin-bottom:0; }
-    table:is(.rec,.adv,.glance,.evi,.rx) td{ padding:5px 0 !important; border:0 !important; border-top:.5px dashed var(--border) !important; text-align:left !important; white-space:normal !important; }
-    table:is(.rec,.adv,.glance,.evi,.rx) td:first-child{ border-top:0 !important; }
-    table:is(.rec,.adv,.glance,.evi,.rx) td[data-col]::before{ content:attr(data-col); display:block; margin-bottom:2px; font-size:9.5px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--text-muted); }
-    table:is(.rec,.adv,.glance,.evi,.rx) td[data-col=""]::before{ display:none; }
+    table.rec, table.adv, table.glance, table.evi, table.rx { display:block; overflow:visible; border:none; border-radius:0; background:none; }
+    table.rec thead, table.adv thead, table.glance thead, table.evi thead, table.rx thead { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0 0 0 0); clip-path:inset(50%); white-space:nowrap; border:0; }
+    table.rec tbody, table.rec tr, table.rec td, table.adv tbody, table.adv tr, table.adv td,
+    table.glance tbody, table.glance tr, table.glance td, table.evi tbody, table.evi tr,
+    table.evi td, table.rx tbody, table.rx tr, table.rx td { display:block; width:auto; }
+    table.rec tr, table.adv tr, table.glance tr, table.evi tr, table.rx tr { background:var(--surface); border:.5px solid var(--border-strong); border-radius:var(--radius-md); padding:9px 12px; margin:0 0 8px; }
+    table.rec tr:last-child, table.adv tr:last-child, table.glance tr:last-child,
+    table.evi tr:last-child, table.rx tr:last-child { margin-bottom:0; }
+    table.rec td, table.adv td, table.glance td, table.evi td, table.rx td { padding:5px 0 !important; border:0 !important; border-top:.5px dashed var(--border) !important; text-align:left !important; white-space:normal !important; }
+    table.rec td:first-child, table.adv td:first-child, table.glance td:first-child,
+    table.evi td:first-child, table.rx td:first-child { border-top:0 !important; }
+    table.rec td[data-col]::before, table.adv td[data-col]::before,
+    table.glance td[data-col]::before, table.evi td[data-col]::before,
+    table.rx td[data-col]::before { content:attr(data-col); display:block; margin-bottom:2px; font-size:9.5px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--text-muted); }
+    table.rec td[data-col=""]::before, table.adv td[data-col=""]::before,
+    table.glance td[data-col=""]::before, table.evi td[data-col=""]::before,
+    table.rx td[data-col=""]::before { display:none; }
   }
   @media print { .bar { position:static; } }
 </style>
